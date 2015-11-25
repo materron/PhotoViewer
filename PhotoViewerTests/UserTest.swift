@@ -1,15 +1,14 @@
 //
-//  PhotoViewerTests.swift
-//  PhotoViewerTests
+//  UserTest.swift
+//  PhotoViewer
 //
-//  Created by Miguel Angel Terron Bote on 23/11/15.
+//  Created by Miguel Angel Terron Bote on 24/11/15.
 //  Copyright © 2015 materron. All rights reserved.
 //
 
 import XCTest
-@testable import PhotoViewer
 
-class PhotoViewerTests: XCTestCase {
+class UserTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
