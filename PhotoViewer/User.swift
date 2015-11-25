@@ -1,10 +1,10 @@
 import Foundation
 
-class User {
-    var userId: Int
-    var userName: String
+public class User {
+    public var userId: Int
+    public var userName: String
     
-    init(userId: Int, userName: String) {
+    public init(userId: Int, userName: String) {
         self.userId = userId
         self.userName = userName
     }

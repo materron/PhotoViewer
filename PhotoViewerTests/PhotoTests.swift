@@ -1,35 +1,19 @@
-//
-//  PhotoTests.swift
-//  PhotoViewer
-//
-//  Created by Miguel Angel Terron Bote on 23/11/15.
-//  Copyright © 2015 materron. All rights reserved.
-//
-
 import XCTest
+import PhotoViewer
 
 class PhotoTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testCanCreateAPhotoUsingAnIdAndValidName() {
+        let sut = Photo(photoId: 10, name: "My Photo")
+        XCTAssertEqual(10, sut.photoId)
+        XCTAssertEqual("My Photo", sut.name)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testCanCreateAPhotoUsingDesignatedInit(){
+        let sut = Photo(photoId: 10, name: "My Photo", photoURL: "url", photoDescription: "desc", width: 100, height: 120)
+        XCTAssertEqual("url", sut.photoURL)
+        XCTAssertEqual("desc", sut.photoDescription)
+        XCTAssertEqual(100, sut.width)
+        XCTAssertEqual(120, sut.height)
+
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

@@ -12,9 +12,10 @@
 		5F234ADC1C03BB65000ACB23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F234ADA1C03BB65000ACB23 /* Main.storyboard */; };
 		5F234ADE1C03BB65000ACB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F234ADD1C03BB65000ACB23 /* Assets.xcassets */; };
 		5F234AE11C03BB65000ACB23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F234ADF1C03BB65000ACB23 /* LaunchScreen.storyboard */; };
-		5F234AEC1C03BB65000ACB23 /* PhotoViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F234AEB1C03BB65000ACB23 /* PhotoViewerTests.swift */; };
 		5F234AFC1C03BF6E000ACB23 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F234AFB1C03BF6E000ACB23 /* Photo.swift */; };
 		5F234AFE1C03C372000ACB23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F234AFD1C03C372000ACB23 /* User.swift */; };
+		5F234B011C03C7EE000ACB23 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F234B001C03C7EE000ACB23 /* PhotoTests.swift */; };
+		5FD5996A1C04B8BA000C1146 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD599691C04B8BA000C1146 /* UserTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +37,12 @@
 		5F234AE01C03BB65000ACB23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F234AE21C03BB65000ACB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F234AE71C03BB65000ACB23 /* PhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F234AEB1C03BB65000ACB23 /* PhotoViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerTests.swift; sourceTree = "<group>"; };
 		5F234AED1C03BB65000ACB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F234AFB1C03BF6E000ACB23 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5F234AFD1C03C372000ACB23 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5F234AFF1C03C7ED000ACB23 /* PhotoViewerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoViewerTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F234B001C03C7EE000ACB23 /* PhotoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
+		5FD599691C04B8BA000C1146 /* UserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +98,10 @@
 		5F234AEA1C03BB65000ACB23 /* PhotoViewerTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F234AEB1C03BB65000ACB23 /* PhotoViewerTests.swift */,
 				5F234AED1C03BB65000ACB23 /* Info.plist */,
+				5F234B001C03C7EE000ACB23 /* PhotoTests.swift */,
+				5F234AFF1C03C7ED000ACB23 /* PhotoViewerTests-Bridging-Header.h */,
+				5FD599691C04B8BA000C1146 /* UserTest.swift */,
 			);
 			path = PhotoViewerTests;
 			sourceTree = "<group>";
@@ -222,7 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F234AEC1C03BB65000ACB23 /* PhotoViewerTests.swift in Sources */,
+				5FD5996A1C04B8BA000C1146 /* UserTest.swift in Sources */,
+				5F234B011C03C7EE000ACB23 /* PhotoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,10 +369,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PhotoViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.materron.PhotoViewerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhotoViewerTests/PhotoViewerTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoViewer.app/PhotoViewer";
 			};
 			name = Debug;
@@ -375,10 +384,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PhotoViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.materron.PhotoViewerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PhotoViewerTests/PhotoViewerTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoViewer.app/PhotoViewer";
 			};
 			name = Release;
@@ -402,6 +413,7 @@
 				5F234AF21C03BB65000ACB23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F234AF31C03BB65000ACB23 /* Build configuration list for PBXNativeTarget "PhotoViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +422,7 @@
 				5F234AF51C03BB65000ACB23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
